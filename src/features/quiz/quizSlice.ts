@@ -46,7 +46,7 @@ export const quizSlice = createSlice({
       state.score += 1;
     },
     resetScore: (state) => {
-      state.score -= 1;
+      state.score = 0;
     },
   },
 });

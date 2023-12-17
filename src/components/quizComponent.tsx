@@ -1,13 +1,17 @@
 import React, {useState} from 'react'
-import { Quiz } from '../features/quiz/quizSlice';
+import { Quiz, incrementScore } from '../features/quiz/quizSlice';
+import { useAppDispatch } from '../app/hooks';
 
-function QuizComponent({question}: {question: Quiz}) {
+function QuizComponent({question, next}: {question: Quiz, next: () => void}) {
+    const dispatch = useAppDispatch()
 
-    const [answer, setAnswer] = useState('');
-
-
-    function checkAnswer() {
+    function checkAnswer(option: string) {
         console.log("Answer checked")
+        if(option === question.answer) {
+            dispatch(incrementScore());
+        }
+        next();
+
     }
   return (
     <div className='quiz'>
@@ -15,7 +19,7 @@ function QuizComponent({question}: {question: Quiz}) {
             {question.question}
         </p>
         <div className="quiz_options">
-            {question.options?.map((option) => (<button onClick={checkAnswer} key={option}>{option}</button>))}
+            {question.options?.map((option) => (<button onClick={() => checkAnswer(option)} key={option}>{option}</button>))}
         </div>
     </div>
   )
