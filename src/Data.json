@@ -1,0 +1,34 @@
+{
+  "questions": [
+    {
+      "question": "What is the capital of Nigeria?",
+      "options": [
+        "Abuja",
+        "Lagos",
+        "Kano",
+        "Benin City"
+      ],
+      "answer": "Abuja"
+    },
+    {
+      "question": "What is the largest continent by area?",
+      "options": [
+        "Africa",
+        "Asia",
+        "Europe",
+        "Australia"
+      ],
+      "answer": "Asia"
+    },
+    {
+      "question": "Who wrote the novel Frankenstein?",
+      "options": [
+        "Mary Shelley",
+        "Bram Stoker",
+        "Edgar Allan Poe",
+        "H. G. Wells"
+      ],
+      "answer": "Mary Shelley"
+    }
+  ]
+}
