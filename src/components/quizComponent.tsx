@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
+import { Quiz } from '../features/quiz/quizSlice';
 
-function QuizComponent({question}: {question: string}) {
+function QuizComponent({question}: {question: Quiz}) {
 
     const [answer, setAnswer] = useState('');
 
@@ -11,13 +12,10 @@ function QuizComponent({question}: {question: string}) {
   return (
     <div className='quiz'>
         <p className="quiz_question">
-            What is the capital of France?
+            {question.question}
         </p>
         <div className="quiz_options">
-            <button onClick={checkAnswer}>Paris</button>
-            <button onClick={checkAnswer}>Lyon</button>
-            <button onClick={checkAnswer}>Marseille</button>
-            <button onClick={checkAnswer}>Toulouse</button>
+            {question.options?.map((option) => (<button onClick={checkAnswer} key={option}>{option}</button>))}
         </div>
     </div>
   )

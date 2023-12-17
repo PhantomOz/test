@@ -37,7 +37,6 @@ const initialState: QuizState = {
 };
 
 export const getScore = (state: QuizState) => state.score;
-export const getQuiz = (state: QuizState) => state.quiz;
 
 export const quizSlice = createSlice({
   name: "quiz",
